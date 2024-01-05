@@ -10,3 +10,23 @@ GreenFinDoors - an interactive software-based sustainable solution, offering loa
 investment assistance to help your business grow, as well as help serve in the betterment of nature in the process.
 
 Tech Stack - 
+---
+-LSTM
+-ARIMA
+-BERT 
+-RandomForest Regressor
+-spaCy
+-HTML
+-CSS
+-Javascript
+-Transformers
+-MySQL
+-Flask(Python)
+---
+
+
+
+
+
+
+

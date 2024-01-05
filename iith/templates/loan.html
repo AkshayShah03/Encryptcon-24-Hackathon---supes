@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Data to Dataset</title>
+    <link rel="stylesheet" href="static/loan-style.css" />
+</head>
+<body>
+
+<h1>Add Data to Dataset</h1>
+
+<form id="dataForm" action="{{url_for('add_data')}}" method="post">
+    <label for="goal">Primary goal of the project: </label>
+    <input type="text" id="goal" name="goal" required>
+    
+    <label for="budget">Budget: </label>
+    <input type="text" id="budget" name="budget" required>
+    
+    <label for="coll">Estimated value of collateral: </label>
+    <input type="number" id="coll" name="collateral" required>
+    
+    <label for="assets">Current Assets: </label>
+    <input type="number" id="assets" name="assets" required>
+    
+    <label for="location">Location: </label>
+    <input type="text" id="location" name="location" required>
+
+    <label for="income">Net income of institution: </label>
+    <input type="number" id="income" name="income" required>
+
+    <label for="ren-en">Form of green energy being targetted: </label>
+    <select id="selectOptions" name="selectOptions" multiple onchange="updateQuestions()">
+        <option value="option1">Solar Energy</option>
+        <option value="option2">Wind Energy</option>
+        <option value="option3">Agriculture </option>
+    </select>
+
+    <div id="questionsContainer"></div>
+
+    <button type="submit" onclick="addData()">Add Data</button>
+</form>
+
+<script>
+    function updateQuestions() {
+        var select = document.getElementById('selectOptions');
+        var selectedOptions = Array.from(select.selectedOptions).map(option => option.value);
+
+        var questionsContainer = document.getElementById('questionsContainer');
+        questionsContainer.innerHTML = '';
+
+        if (selectedOptions.includes('option3')) {
+            // If 'Option 3' is selected, display extra questions and input fields
+            var extraQuestion1 = document.createElement('p');
+            extraQuestion1.textContent = 'Extra Question 1: What technology are you planning to use?';
+            questionsContainer.appendChild(extraQuestion1);
+
+            var answerInput1 = document.createElement('input');
+            answerInput1.type = 'text';
+            answerInput1.name = 'extraAnswer1';
+            questionsContainer.appendChild(answerInput1);
+
+            var extraQuestion2 = document.createElement('p');
+            extraQuestion2.textContent = 'Extra Question 2: Are livelihoods at risk(y/n)?';
+            questionsContainer.appendChild(extraQuestion2);
+
+            var answerInput2 = document.createElement('input');
+            answerInput2.type = 'text';
+            answerInput2.name = 'extraAnswer2';
+            questionsContainer.appendChild(answerInput2);
+        }
+    
+    }
+    // Sample dataset array
+    var dataset = [];
+
+    function addData() {
+        // Get form input values
+        var goal = document.getElementById('goal').value;
+        var coll = document.getElementById('coll').value;
+        var income = document.getElementById('income').value;
+
+        // Validate input (you may add more validation as needed)
+        if (goal.trim() === '' || isNaN(coll)) {
+            alert('Please enter valid data.');
+            return;
+        }
+
+        // Create a data object
+        var newData = {
+            goal: goal,
+            coll: parseInt(coll),
+            income: parseInt(income),
+        };
+
+        // Add data to the dataset
+        dataset.push(newData);
+
+        // Update the output on the webpage
+        updateOutput();
+    }
+
+    function updateOutput() {
+        var datasetList = document.getElementById('datasetList');
+        datasetList.innerHTML = '';
+
+        // Iterate through the dataset and display it on the webpage
+        for (var i = 0; i < dataset.length; i++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = `Goal: ${dataset[i].goal}, Collateral: ${dataset[i].coll}, Income: ${dataset[i].income}`;
+            datasetList.appendChild(listItem);
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Stock Analysis</h1>
+
+<h2> Moving Average of data </h2>
+<img src="data:image/png;base64,{{ img1 }}" alt="Matplotlib Plot">
+
+<h2> Daily Returns </h2>
+<img src="data:image/png;base64,{{ img2 }}" alt="Matplotlib Plot">
+
+{% for plot in imgs %}
+    <h2>forecast</h2>
+    <img src="data:image/png;base64,{{ plot }}" alt="Matplotlib Plot"></br>
+{% endfor %}
+
+</body>
+</html>

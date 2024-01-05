@@ -9,7 +9,7 @@ Presenting to you, -
 GreenFinDoors - an interactive software-based sustainable solution, offering loan oppurtunities based on indexes accurately quantifying an institution's contribution to sustainability, while also providing 
 investment assistance to help your business grow, as well as help serve in the betterment of nature in the process.
 
-Tech Stack - 
+Tech Stack:
 ---
 -LSTM
 
@@ -39,15 +39,39 @@ Tech Stack -
 
 ## Overview
 
-The Green Finance Analytics project provides a comprehensive solution for evaluating green energy projects and making informed investment decisions in the green stock market. It is divided into two main components:
+Green Finance Analytics is a sophisticated tool designed to empower users in evaluating green energy projects and making informed decisions in the green stock market. This comprehensive solution is split into two main categories:
 
-### Green Energy Project Proposal Evaluation
+### a) Green Energy Project Proposal Evaluation
 
-This component involves the assessment of green energy project proposals, generating viability scores, ESG (Environmental, Social, and Governance) scores, and risk scores. The process includes creating a dynamic dataset based on user responses, utilizing a BERT-based model for ESG scoring, and evaluating viability and risk factors.
+This module involves the detailed assessment of green energy project proposals, providing users with a holistic view of viability, ESG (Environmental, Social, and Governance) scores, and risk factors. The process is as follows:
 
-### Green Stock Investment Advisory
+1. **Dynamic Dataset Creation:**
+    - The tool uses a curated dataset derived from extensive research within the green finance market.
+    - The dataset, consisting of 50+ entries, dynamically updates as users respond to the frontend questionnaire.
 
-The second component focuses on analyzing current trends in green stocks and suggesting the best stocks for investment based on an individual's risk tolerance (on a scale of 1 to 5). The recommendations consider factors such as financial performance, market trends, and sustainability metrics.
+2. **ESG Score Generation:**
+    - A BERT-based model analyzes project summaries to generate precise ESG scores.
+    - ESG scores encompass environmental impact, social responsibility, and governance practices.
+
+3. **Viability Score Calculation:**
+    - Viability scores are determined by evaluating the business details of each company.
+    - The scoring system provides a quantifiable metric to assess the potential success of the proposed green energy projects.
+
+4. **Risk Factor Assessment:**
+    - Geographical considerations are factored into a risk assessment model.
+    - The tool evaluates potential challenges associated with the geographical location of each project.
+
+### b) Green Stock Investment Advisory
+
+This module focuses on studying current trends in green stocks and offering personalized stock recommendations based on an individual's risk tolerance. The process includes:
+
+1. **Current Trend Analysis:**
+    - Proprietary algorithms analyze the current trends in the green stock market.
+    - Recommendations are tailored to individual risk preferences on a scale of 1 to 5.
+
+2. **Stock Suggestions:**
+    - Recommendations consider factors such as financial performance, market trends, and sustainability metrics.
+   
 
 ## Installation
 

@@ -12,16 +12,27 @@ investment assistance to help your business grow, as well as help serve in the b
 Tech Stack - 
 ---
 -LSTM
+
 -ARIMA
+
 -BERT 
+
 -RandomForest Regressor
+
 -spaCy
+
 -HTML
+
 -CSS
+
 -Javascript
+
 -Transformers
+
 -MySQL
+
 -Flask(Python)
+
 ---
 
 
